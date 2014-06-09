@@ -1,6 +1,8 @@
 #!/bin/sh
 __author__ = 'Sean'
 import datetime
+
+
 now = datetime.datetime.now()
 
 # values collected from user
