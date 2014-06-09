@@ -1,5 +1,5 @@
 #!/bin/sh
- __author__ = 'Sean'
+__author__ = 'Sean'
 import datetime
 now = datetime.datetime.now()
 
