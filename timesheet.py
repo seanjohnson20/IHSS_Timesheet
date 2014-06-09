@@ -1,4 +1,5 @@
-__author__ = 'QA'
+#!/bin/sh
+ __author__ = 'Sean'
 import datetime
 now = datetime.datetime.now()
 
