@@ -2,7 +2,6 @@
 __author__ = 'Sean'
 import datetime
 
-
 now = datetime.datetime.now()
 
 # values collected from user
@@ -12,7 +11,7 @@ d = int(raw_input('How many days in month(eg. 31): '))
 name = raw_input('Name this file: ')
 
 #calculated / assumed values
-p1 = d/2
+p1 = 15
 p2 = d-p1
 tm = h*60 + 56
 min_per_day_p1 = (tm/2)/p1
