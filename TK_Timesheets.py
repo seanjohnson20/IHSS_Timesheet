@@ -21,17 +21,17 @@ def calc():
     m = Min.get()
     d = Days.get()
     ttl = h * 60 + m
-
     periods = Rad.get()
-    valName = Filename.get()
+    ttlp = ttl/periods
+    fName = Filename.get()
 
     lblspace = Label(text='___________________________', bg=bckgrnd).grid(row=5, column=0, sticky=E)
     lblspace = Label(text='___________________________', bg=bckgrnd).grid(row=5, column=1, sticky=W)
 
     lbltxtName = Label(text='Filename:', width=20, bg=bckgrnd).grid(row=6, column=0, sticky=E)
-    lblvalName = Label(text=valName, bg=bckgrnd).grid(row=6, column=1, sticky=W)
+    lblvalName = Label(text=fName, bg=bckgrnd).grid(row=6, column=1, sticky=W)
 
-    lbltxtN1 = Label(text='Hrs/Min in Calc:', width=20, bg=bckgrnd).grid(row=7, column=0, sticky=E)
+    lbltxtN1 = Label(text='Hrs:Min in Calc:', width=20, bg=bckgrnd).grid(row=7, column=0, sticky=E)
     lblvalN1 = Label(text=str(h)+':'+str(m), bg=bckgrnd).grid(row=7, column=1, sticky=W)
 
     lbltxtN2 = Label(text='Days in Calc:', width=20, bg=bckgrnd).grid(row=8, column=0, sticky=E)
@@ -40,10 +40,13 @@ def calc():
     lbltxtRes = Label(text='Total Minutes:', width=20, bg=bckgrnd).grid(row=9, column=0, sticky=E)
     lblvalRes = Label(text=ttl, bg=bckgrnd).grid(row=9, column=1, sticky=W)
 
-    lbltxtPer = Label(text='Periods in Calc:', width=20, bg=bckgrnd).grid(row=10, column=0, sticky=E)
-    lblvalPer = Label(text=str(periods), bg=bckgrnd).grid(row=10, column=1, sticky=W)
+    lbltxtRes = Label(text='Number of Periods:', width=20, bg=bckgrnd).grid(row=10, column=0, sticky=E)
+    lblvalRes = Label(text=periods, bg=bckgrnd).grid(row=10, column=1, sticky=W)
 
-    tkMessageBox.showinfo('Congratulations', 'Your ' + valName + ' file has been saved.')
+    lbltxtPer = Label(text='Minutes per period:', width=20, bg=bckgrnd).grid(row=11, column=0, sticky=E)
+    lblvalPer = Label(text=str(ttlp), bg=bckgrnd).grid(row=11, column=1, sticky=W)
+
+    tkMessageBox.showinfo('Congratulations', 'Your ' + fName + ' file has been saved.')
 
 
 Hdr = Label(text='IHSS Timesheet Calculator', bg=bckgrnd).grid(row=0, column=1, sticky=N)
@@ -51,7 +54,7 @@ Hdr = Label(text='IHSS Timesheet Calculator', bg=bckgrnd).grid(row=0, column=1, 
 labelNum1 = Label(text='Name of File:', width=20, bg=bckgrnd).grid(row=1, column=0, sticky=E)
 entryNum1 = Entry(app, textvariable=Filename, width=20).grid(row=1, column=1, sticky=E)
 
-lblHrsMin = Label(text='Hours:Minutes in Calc:', width=20, bg=bckgrnd).grid(row=2, column=0, sticky=E)
+lblHrsMin = Label(text='Hours:Minutes in Calc:', width=20,bg=bckgrnd).grid(row=2, column=0, sticky=E)
 entHrs = Entry(app, textvariable=Hrs, width=20).grid(row=2, column=1, sticky=E)
 lblColon = Label(text=':', width=1).grid(row=2, column=2, sticky=W)
 entMin = Entry(app, textvariable=Min, width=20).grid(row=2, column=3, sticky=W)

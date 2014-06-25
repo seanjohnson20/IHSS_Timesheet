@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="edf61af6-84dd-4470-bffa-b3562c822940" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TK_Timesheets.py" afterPath="$PROJECT_DIR$/TK_Timesheets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timesheet.iml" afterPath="$PROJECT_DIR$/timesheet.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="timesheet.iws" />
@@ -89,7 +87,7 @@
       <file leaf-file-name="TK_Timesheets.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TK_Timesheets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="76" selection-start="2752" selection-end="2753" vertical-scroll-proportion="0.8729228" vertical-offset="259" max-vertical-offset="1332">
+            <state line="21" column="18" selection-start="396" selection-end="396" vertical-scroll-proportion="0.10557185" vertical-offset="270" max-vertical-offset="1386">
               <folding>
                 <element signature="e#22#43#0" expanded="true" />
               </folding>
@@ -196,13 +194,14 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="SearchEverywhereHistoryKey" value="show line&#9;ACTION&#9;EditorToggleShowLineNumbers" />
+    <property name="SearchEverywhereHistory" value="show line" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <console-settings module-name="timesheet" sdk-home="C:\Python27\python.exe">
+      <PyConsoleSettings>
         <option name="mySdkHome" value="C:\Python27\python.exe" />
         <option name="myModuleName" value="timesheet" />
-      </console-settings>
+      </PyConsoleSettings>
     </option>
   </component>
   <component name="RunManager" selected="Python.TK_Timesheets">
@@ -530,8 +529,23 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration">
-    <configuration />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -559,7 +573,11 @@
       <created>1403649040224</created>
       <updated>1403649040224</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add #!/bin/sh &#10;modify size">
+      <created>1403667356997</created>
+      <updated>1403667356997</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -596,6 +614,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2679097" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18385416" sideWeight="0.5008681" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -606,7 +625,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -651,7 +669,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Update shebang and author" />
     <MESSAGE value="cleanup #!/bin/sh and __author__" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup #!/bin/sh and __author__" />
+    <MESSAGE value="add #!/bin/sh &#10;modify size" />
+    <option name="LAST_COMMIT_MESSAGE" value="add #!/bin/sh &#10;modify size" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -722,7 +741,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/timesheet.py">
@@ -734,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TK_Timesheets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="76" selection-start="2752" selection-end="2753" vertical-scroll-proportion="0.8729228" vertical-offset="259" max-vertical-offset="1332">
+        <state line="21" column="18" selection-start="396" selection-end="396" vertical-scroll-proportion="0.10557185" vertical-offset="270" max-vertical-offset="1386">
           <folding>
             <element signature="e#22#43#0" expanded="true" />
           </folding>
