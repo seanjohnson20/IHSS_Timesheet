@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 from Tkinter import *
 import tkMessageBox
 
 app = Tk()
 app.title('IHSS Timesheet Calculator')
-app.geometry('500x400+400+300')
+app.geometry('600x400+400+300')
 bckgrnd = '#00ffff'
 app.configure(background=bckgrnd)
 Hrs = IntVar()
@@ -61,7 +62,7 @@ entDays = Entry(app, textvariable=Days, width=20).grid(row=3, column=1, sticky=E
 rb1 = Radiobutton(app, text="One period", variable=Rad, value=1, bg=bckgrnd).grid(row=4, column=0, sticky=E)
 rb2 = Radiobutton(app, text="Two periods", variable=Rad, value=2, bg=bckgrnd).grid(row=4, column=1, sticky=E)
 
-myButton = Button(app, text='Calculate', width=10, command=calc).place(x=410, y=365)
+myButton = Button(app, text='Calculate', width=10, command=calc).place(x=475, y=360)
 
 app.mainloop()
 
