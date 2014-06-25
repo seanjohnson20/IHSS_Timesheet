@@ -5,9 +5,10 @@ import datetime
 now = datetime.datetime.now()
 
 # values collected from user
-h = int(raw_input('How many hours(eg. 95): '))
-m = int(raw_input('How many minutes(eg. 56): '))
-d = int(raw_input('How many days in month(eg. 31): '))
+h = int(raw_input('How many hours( e.g. 95): '))
+m = int(raw_input('How many minutes( e.g. 56): '))
+d = int(raw_input('How many days in month( e.g. 31): '))
+np = int(raw_input('How many periods( e.g. 1 or 2: '))
 name = raw_input('Name this file: ')
 
 #calculated / assumed values
