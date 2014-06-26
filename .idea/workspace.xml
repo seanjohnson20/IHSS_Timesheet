@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="edf61af6-84dd-4470-bffa-b3562c822940" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TK_Timesheets.py" afterPath="$PROJECT_DIR$/TK_Timesheets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsrev.py" afterPath="$PROJECT_DIR$/tsrev.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="timesheet.iws" />
@@ -46,8 +45,8 @@
           <file leaf-file-name="tsrev.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tsrev.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
-                  <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+                <state vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="2074">
+                  <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -60,8 +59,8 @@
           <file leaf-file-name="TK_Timesheets.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/TK_Timesheets.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6409336" vertical-offset="255" max-vertical-offset="1938">
-                  <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+                <state vertical-scroll-proportion="0.45062837" vertical-offset="1313" max-vertical-offset="1972">
+                  <caret line="92" column="94" selection-start-line="92" selection-start-column="94" selection-end-line="92" selection-end-column="94" />
                   <folding>
                     <element signature="e#22#43#0" expanded="true" />
                   </folding>
@@ -668,7 +667,11 @@
       <created>1403739157182</created>
       <updated>1403739157182</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed alignment of labels.   prepopulated fields.   added divide by zero prevention if statement.   changed window size.">
+      <created>1403812918467</created>
+      <updated>1403812918467</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -693,7 +696,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19627085" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -702,7 +705,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.343474" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42590776" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42590776" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18390192" sideWeight="0.50049067" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15799804" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -765,7 +768,8 @@
     <MESSAGE value="cleanup #!/bin/sh and __author__" />
     <MESSAGE value="updated radio buttons to preselect value 2&#10;added font support&#10;changed color" />
     <MESSAGE value="updates to calc function" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates to calc function" />
+    <MESSAGE value="fixed alignment of labels.   prepopulated fields.   added divide by zero prevention if statement.   changed window size." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed alignment of labels.   prepopulated fields.   added divide by zero prevention if statement.   changed window size." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -847,16 +851,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tsrev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.53125" vertical-offset="0" max-vertical-offset="2074">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TK_Timesheets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6409336" vertical-offset="255" max-vertical-offset="1938">
-          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.45062837" vertical-offset="1313" max-vertical-offset="1972">
+          <caret line="92" column="94" selection-start-line="92" selection-start-column="94" selection-end-line="92" selection-end-column="94" />
           <folding>
             <element signature="e#22#43#0" expanded="true" />
           </folding>

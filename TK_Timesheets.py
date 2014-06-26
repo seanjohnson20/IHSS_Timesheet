@@ -3,6 +3,7 @@ from Tkinter import *
 import tkMessageBox
 import tkFont
 import datetime
+import os, sys
 
 # variables
 now = datetime.datetime.now()
@@ -23,6 +24,7 @@ Filename = StringVar()
 Filename.set('Some Month')
 myFont = tkFont.Font(family="Comic Sans MS",size=10,weight="bold")
 bold = tkFont.Font(weight="bold")
+path = os.path.dirname(__file__)
 
 def calc():
     print 'Calc function is running'
@@ -81,7 +83,7 @@ def calc():
     lblvalPer = Label(text=str(min_in_period).format(1.2), bg=bckgrnd).grid(row=11, column=1, sticky=W)
 
     # alert box
-    tkMessageBox.showinfo('Congratulations', 'Your ' + fName + ' file has been saved.')
+    tkMessageBox.showinfo('Congratulations', 'Your '+fName+' has been saved here : '+str(path)+'/'+str(fName)+'.txt')
 
     # Time calculations
 
