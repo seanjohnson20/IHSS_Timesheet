@@ -8,15 +8,19 @@ import datetime
 now = datetime.datetime.now()
 app = Tk()
 app.title('IHSS Timesheet Calculator')
-app.geometry('600x400+400+300') # size WxH, position y,x
+app.geometry('575x400+400+300') # size WxH, position y,x
 bckgrnd = 'LightBlue'       #Cyan '#00ffff'
 app.configure(background=bckgrnd)
 Hrs = IntVar()
+Hrs.set(95)
 Min = IntVar()
+Min.set(56)
 Days = IntVar()
+Days.set(31)
 Rad = IntVar()
 Rad.set(2)
 Filename = StringVar()
+Filename.set('Some Month')
 myFont = tkFont.Font(family="Comic Sans MS",size=10,weight="bold")
 bold = tkFont.Font(weight="bold")
 
@@ -28,8 +32,12 @@ def calc():
     ttl_min = h * 60 + m
     periods = Rad.get()
     min_in_period = float(ttl_min/periods)
-
     fName = Filename.get()
+
+    # prevent crash by testing for divide by zero errors
+    if (periods==2 and d<2) or (periods==1 and d<1):
+        tkMessageBox.showwarning('Oops', 'Please start over. Your days and periods would cause an error.')
+        exit()
 
     for i in range(1,periods+1):
         if periods==1:
@@ -51,25 +59,25 @@ def calc():
             print "2 Periods min per day",min_per_day_p2
 
     #On screen output
-    lblspace = Label(text='___________________________',bg=bckgrnd).grid(row=5, column=0, sticky=E)
-    lblspace = Label(text='___________________________',bg=bckgrnd).grid(row=5, column=1, sticky=W)
+    lblspace = Label(text='_________________',bg=bckgrnd).grid(row=5, column=0, sticky=E)
+    lblspace = Label(text='_________________',bg=bckgrnd).grid(row=5, column=1, sticky=W)
 
-    lbltxtName = Label(text='Filename:',font=myFont,width=20, bg=bckgrnd).grid(row=6, column=0, sticky=E)
+    lbltxtName = Label(text='Filename:',font=myFont,bg=bckgrnd).grid(row=6, column=0, sticky=E)
     lblvalName = Label(text=fName,bg=bckgrnd).grid(row=6, column=1, sticky=W)
 
-    lbltxtN1 = Label(text='Hrs:Min in Calc:',font=myFont,width=20, bg=bckgrnd).grid(row=7, column=0, sticky=E)
+    lbltxtN1 = Label(text='Hrs:Min in Calc:',font=myFont,bg=bckgrnd).grid(row=7, column=0, sticky=E)
     lblvalN1 = Label(text=str(h)+':'+str(m),bg=bckgrnd).grid(row=7, column=1, sticky=W)
 
-    lbltxtN2 = Label(text='Days in Calc:',font=myFont,width=20, bg=bckgrnd).grid(row=8, column=0, sticky=E)
+    lbltxtN2 = Label(text='Days in Calc:',font=myFont,bg=bckgrnd).grid(row=8, column=0, sticky=E)
     lblvalN2 = Label(text=str(d), bg=bckgrnd).grid(row=8, column=1, sticky=W)
 
-    lbltxtRes = Label(text='Total Minutes:',font=myFont,width=20, bg=bckgrnd).grid(row=9, column=0, sticky=E)
+    lbltxtRes = Label(text='Total Minutes:',font=myFont, bg=bckgrnd).grid(row=9, column=0, sticky=E)
     lblvalRes = Label(text=ttl_min, bg=bckgrnd).grid(row=9, column=1, sticky=W)
 
-    lbltxtRes = Label(text='Number of Periods:',font=myFont,width=20, bg=bckgrnd).grid(row=10, column=0, sticky=E)
+    lbltxtRes = Label(text='Number of Periods:',font=myFont,bg=bckgrnd).grid(row=10, column=0, sticky=E)
     lblvalRes = Label(text=periods, bg=bckgrnd).grid(row=10, column=1, sticky=W)
 
-    lbltxtPer = Label(text='Minutes per period:',font=myFont,width=20, bg=bckgrnd).grid(row=11, column=0, sticky=E)
+    lbltxtPer = Label(text='Minutes per period:',font=myFont,bg=bckgrnd).grid(row=11, column=0, sticky=E)
     lblvalPer = Label(text=str(min_in_period).format(1.2), bg=bckgrnd).grid(row=11, column=1, sticky=W)
 
     # alert box
@@ -80,16 +88,16 @@ def calc():
 
 Hdr = Label(text='IHSS Timesheet Calculator',font=myFont,bg=bckgrnd).grid(row=0, column=1)
 
-labelNum1 = Label(text='Name of File:',font=myFont,width=20,bg=bckgrnd).grid(row=1, column=0, sticky=E)
-entryNum1 = Entry(app, textvariable=Filename, width=20).grid(row=1, column=1, sticky=E)
+labelNum1 = Label(text='Name of File:',font=myFont,bg=bckgrnd).grid(row=1, column=0, sticky=E)
+entryNum1 = Entry(app, textvariable=Filename).grid(row=1, column=1, sticky=E)
 
-lblHrsMin = Label(text='Hours:Minutes in Calc:',font=myFont,width=20,bg=bckgrnd).grid(row=2, column=0, sticky=E)
-entHrs = Entry(app, textvariable=Hrs,width=20).grid(row=2, column=1, sticky=E)
+lblHrsMin = Label(text='Hours:Minutes in Calc:',font=myFont,bg=bckgrnd).grid(row=2, column=0, sticky=E)
+entHrs = Entry(app, textvariable=Hrs).grid(row=2, column=1, sticky=E)
 lblColon = Label(text=':',font=myFont,width=1).grid(row=2, column=2, sticky=W)
-entMin = Entry(app, textvariable=Min,width=20).grid(row=2, column=3, sticky=W)
+entMin = Entry(app, textvariable=Min).grid(row=2, column=3, sticky=W)
 
-lblDays = Label(text='Days in Calc:',font=myFont, width=20,bg=bckgrnd).grid(row=3, column=0, sticky=E)
-entDays = Entry(app, textvariable=Days, width=20).grid(row=3, column=1, sticky=E)
+lblDays = Label(text='Days in Calc:',font=myFont,bg=bckgrnd).grid(row=3, column=0, sticky=E)
+entDays = Entry(app, textvariable=Days).grid(row=3, column=1, sticky=E)
 
 rb1 = Radiobutton(app, text="One period",font=myFont,variable=Rad, value=1, bg=bckgrnd).grid(row=4, column=0, sticky=E)
 rb2 = Radiobutton(app, text="Two periods",font=myFont,variable=Rad, value=2, bg=bckgrnd).grid(row=4, column=1, sticky=E)

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import datetime
 now = datetime.datetime.now()
 name = raw_input('What name do you want to give your text file: ')
