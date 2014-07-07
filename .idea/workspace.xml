@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf61af6-84dd-4470-bffa-b3562c822940" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TK_Timesheets.py" afterPath="$PROJECT_DIR$/TK_Timesheets.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="timesheet.iws" />
@@ -668,7 +667,11 @@
       <created>1404758157102</created>
       <updated>1404758157102</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added file.write code.">
+      <created>1404761230556</created>
+      <updated>1404761230556</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -767,7 +770,8 @@
     <MESSAGE value="updates to calc function" />
     <MESSAGE value="fixed alignment of labels.   prepopulated fields.   added divide by zero prevention if statement.   changed window size." />
     <MESSAGE value="changed period to 2.0 to create float.  cast hpd/mpd back to int.  added last_min conversion for final day." />
-    <option name="LAST_COMMIT_MESSAGE" value="changed period to 2.0 to create float.  cast hpd/mpd back to int.  added last_min conversion for final day." />
+    <MESSAGE value="Added file.write code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added file.write code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
