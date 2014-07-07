@@ -19,7 +19,7 @@ Min.set(56)
 Days = IntVar()
 Days.set(31)
 Rad = IntVar()
-Rad.set(2)
+Rad.set(2.0)
 Filename = StringVar()
 Filename.set('Some Month')
 myFont = tkFont.Font(family="Comic Sans MS",size=10,weight="bold")
@@ -27,13 +27,12 @@ bold = tkFont.Font(weight="bold")
 path = os.path.dirname(__file__)
 
 def calc():
-    print 'Calc function is running'
     h = Hrs.get()
     m = Min.get()
     d = Days.get()
     ttl_min = h * 60 + m
     periods = Rad.get()
-    min_in_period = float(ttl_min/periods)
+    min_in_period = ttl_min/periods
     fName = Filename.get()
 
     # prevent crash by testing for divide by zero errors
@@ -43,43 +42,109 @@ def calc():
 
     print 'ttl_min: '+str(ttl_min)
     print 'min_in_period: '+str(min_in_period)
+    print 'd in period: '+str(d)
 
     if periods==1:
         print '---------'
         print '1 Period '
         print '---------'
+        d_p1=d
         min_in_p1 = min_in_period
-        min_per_day_p1 = ttl_min/d
-        print 'min_per_day_p1: '+str(min_per_day_p1)
-        hpd_p1 = min_per_day_p1/60
-        mpd_p1 = min_per_day_p1%60
-        for i in range(1, d + 1):
+        min_per_day_p1 = Integer(min_in_p1/d_p1 + min_in_p1%d_p1)
+        print 'min_per_day_p1: ' + str(min_per_day_p1)
+        hpd_p1 = int(min_per_day_p1/60)
+        mpd_p1 = int(min_per_day_p1%60)
+        for i in range(1, d_p1 + 1):
             if min_in_p1 > 2*((hpd_p1*60)+mpd_p1):
                 min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
-                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str(mpd_p1)
+                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % mpd_p1)
                 print 'Min_in_p1: '+ str(min_in_p1)
             else:
                 min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
-                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str(mpd_p1 + min_in_p1)
+                last_min = mpd_p1 + min_in_p1
+                if last_min>60:
+                    hpd_p1+=1
+                    last_min=last_min-60
+                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % (last_min))
 
     else: # periods==2
         print '---------'
         print '2 Periods'
         print '---------'
-        p1=d/periods
-        p2=d-p1
-        print ' '
-        print '--- period 1 ---'
-        print ' '
-        for i in range(1,p1+1):
-            print 'Day '+str(i)+' - '
-        print ' '
+        d_p1 = 15
+        d_p2 = d - d_p1
+        if d < 15:
+            d_p1 = d/2
+            d_p2 = d - d_p1
 
-        print '--- period 2 ---'
         print ' '
-        for i in range(1,p2+1):
-            print 'Day '+str(i)+' - '
+        print ' --- Period 1 --- '
         print ' '
+        min_in_p1 = min_in_period
+        min_per_day_p1 = min_in_p1/d_p1
+        print 'min_per_day_p1: ' + str(min_per_day_p1)
+        print 'min_in_p1: ' + str(min_in_p1)
+        print 'd_p1: ' + str(d_p1)
+        hpd_p1 = int(min_per_day_p1/60)
+        mpd_p1 = int(min_per_day_p1%60)
+        for i in range(1, d_p1 + 1):
+            if min_in_p1 > 2 * ((hpd_p1*60)+mpd_p1):
+                min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
+                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % mpd_p1)
+                print 'Min_in_p1: '+ str(min_in_p1)
+            else:
+                print 'ELSE'
+                min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
+                last_min = mpd_p1 + min_in_p1
+                if last_min>60:
+                    hpd_p1+=1
+                    last_min=last_min-60
+                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % (last_min))
+
+        print ' '
+        print ' -- Period 2 -- '
+        print ' '
+        min_in_p2 = min_in_period
+        min_per_day_p2 = min_in_p2/d_p2
+        print 'min_per_day_p2: ' + str(min_per_day_p2)
+        print 'min_in_p2: ' + str(min_in_p2)
+        print 'd_p2: ' + str(d_p2)
+        hpd_p2 = int(min_per_day_p2/60)
+        mpd_p2 = int(min_per_day_p2%60)
+        for i in range(1, d_p2 + 1):
+            if min_in_p2 > 2*((hpd_p2*60)+mpd_p2):
+                min_in_p2 = min_in_p2 - (hpd_p2*60) - mpd_p2
+                print 'Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % mpd_p2)
+                print 'Min_in_p2: '+ str(min_in_p2)
+            else:
+                print 'ELSE'
+                min_in_p2 = min_in_p2 - (hpd_p2*60) - mpd_p2
+                last_min = mpd_p2 + min_in_p2
+                if last_min>60:
+                    hpd_p2+=1
+                    last_min=last_min-60
+                print 'Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % (last_min))
+
+
+
+
+
+
+
+        # p1=d/periods
+        # p2=d-p1
+        # print ' '
+        # print '--- period 1 ---'
+        # print ' '
+        # for i in range(1,p1+1):
+        #     print 'Day '+str(i)+' - '
+        # print ' '
+        #
+        # print '--- period 2 ---'
+        # print ' '
+        # for i in range(1,p2+1):
+        #     print 'Day '+str(i)+' - '
+        # print ' '
 
 
     #On screen output
@@ -123,7 +188,7 @@ lblDays = Label(text='Days in Calc:',font=myFont,bg=bckgrnd).grid(row=3, column=
 entDays = Entry(app, textvariable=Days).grid(row=3, column=1, sticky=E)
 
 rb1 = Radiobutton(app, text="One period",font=myFont,variable=Rad, value=1, bg=bckgrnd).grid(row=4, column=0, sticky=E)
-rb2 = Radiobutton(app, text="Two periods",font=myFont,variable=Rad, value=2, bg=bckgrnd).grid(row=4, column=1, sticky=E)
+rb2 = Radiobutton(app, text="Two periods",font=myFont,variable=Rad, value=2.0, bg=bckgrnd).grid(row=4, column=1, sticky=E)
 
 myButton = Button(app, text='Calculate',font=myFont, width=10, command=calc).place(x=475, y=360)
 

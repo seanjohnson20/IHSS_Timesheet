@@ -31,7 +31,7 @@ def calculate():
             for i in range(1,p1+1):
                 if minutesInPeriod>(2*(minutesPerDay)):
                     minutesInPeriod = minutesInPeriod-(hpd*60)-mpd
-                    print 'Day '+str(i)+' - '+str(hpd)+':'+str(mpd)
+                    print 'Day '+str(i)+' - '+str(hpd)+':'+str({'%.2f'}.format(mpd))
                     print ' '
                 else:
                     minutesInPeriod = minutesInPeriod-(hpd*60)-mpd
