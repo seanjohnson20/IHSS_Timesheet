@@ -33,7 +33,6 @@ def calculate():
                     minutesInPeriod = minutesInPeriod-(hpd*60)-mpd
                     print 'Day '+str(i)+' - '+str(hpd)+':'+str(mpd)
                     print ' '
-
                 else:
                     minutesInPeriod = minutesInPeriod-(hpd*60)-mpd
                     last_min=mpd+minutesInPeriod

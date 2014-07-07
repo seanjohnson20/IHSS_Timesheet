@@ -41,24 +41,46 @@ def calc():
         tkMessageBox.showwarning('Oops', 'Please start over. Your days and periods would cause an error.')
         exit()
 
-    for i in range(1,periods+1):
-        if periods==1:
-            p1=d
-            min_per_day=ttl_min/p1
-            hpd = min_per_day/60
-            mpd = min_per_day%60
-            print "1 Period min per day",min_per_day
-            print "HPD:MPD ",str(hpd)+':'+str(mpd)
-        else:
-            p1=15
-            p2=d-p1
-            if d<16:
-                p1=d/2
-                p2=d-p1
-            min_per_day_p1=ttl_min/p1
-            min_per_day_p2=ttl_min/p2
-            print "1 Period min per day",min_per_day_p1
-            print "2 Periods min per day",min_per_day_p2
+    print 'ttl_min: '+str(ttl_min)
+    print 'min_in_period: '+str(min_in_period)
+
+    if periods==1:
+        print '---------'
+        print '1 Period '
+        print '---------'
+        min_in_p1 = min_in_period
+        min_per_day_p1 = ttl_min/d
+        print 'min_per_day_p1: '+str(min_per_day_p1)
+        hpd_p1 = min_per_day_p1/60
+        mpd_p1 = min_per_day_p1%60
+        for i in range(1, d + 1):
+            if min_in_p1 > 2*((hpd_p1*60)+mpd_p1):
+                min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
+                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str(mpd_p1)
+                print 'Min_in_p1: '+ str(min_in_p1)
+            else:
+                min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
+                print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str(mpd_p1 + min_in_p1)
+
+    else: # periods==2
+        print '---------'
+        print '2 Periods'
+        print '---------'
+        p1=d/periods
+        p2=d-p1
+        print ' '
+        print '--- period 1 ---'
+        print ' '
+        for i in range(1,p1+1):
+            print 'Day '+str(i)+' - '
+        print ' '
+
+        print '--- period 2 ---'
+        print ' '
+        for i in range(1,p2+1):
+            print 'Day '+str(i)+' - '
+        print ' '
+
 
     #On screen output
     lblspace = Label(text='_________________',bg=bckgrnd).grid(row=5, column=0, sticky=E)
@@ -85,7 +107,6 @@ def calc():
     # alert box
     tkMessageBox.showinfo('Congratulations', 'Your '+fName+' has been saved here : '+str(path)+'/'+str(fName)+'.txt')
 
-    # Time calculations
 
 
 Hdr = Label(text='IHSS Timesheet Calculator',font=myFont,bg=bckgrnd).grid(row=0, column=1)
