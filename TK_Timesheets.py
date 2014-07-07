@@ -34,6 +34,7 @@ def calc():
     periods = Rad.get()
     min_in_period = ttl_min/periods
     fName = Filename.get()
+    file = open(fName + ".txt", "a+")
 
     # prevent crash by testing for divide by zero errors
     if (periods==2 and d<2) or (periods==1 and d<1):
@@ -41,16 +42,25 @@ def calc():
         exit()
 
     print 'ttl_min: '+str(ttl_min)
-    print 'min_in_period: '+str(min_in_period)
-    print 'd in period: '+str(d)
+    file.write('Total Minutes in calculation: ' + str(ttl_min)+'\n')
+    print 'd in period: ' + str(d)
+    file.write('Total Days in calculation: ' + str(d)+'\n')
 
     if periods==1:
         print '---------'
         print '1 Period '
         print '---------'
+        file.write('---------'+'\n')
+        file.write('1 Period '+'\n')
+        file.write('---------'+'\n')
         d_p1=d
         min_in_p1 = min_in_period
-        min_per_day_p1 = Integer(min_in_p1/d_p1 + min_in_p1%d_p1)
+        min_per_day_p1 = min_in_p1/d_p1
+        print 'min_in_p1: ' +  str(min_in_p1)
+        file.write('Minutes in Period 1: ' + str(min_in_p1)+'\n')
+        file.write('Days in Period 1: ' + str(d_p1)+'\n')
+        file.write('Minutes/Day in Period 1: '+ str(min_per_day_p1)+'\n')
+        file.write('---------'+'\n')
         print 'min_per_day_p1: ' + str(min_per_day_p1)
         hpd_p1 = int(min_per_day_p1/60)
         mpd_p1 = int(min_per_day_p1%60)
@@ -58,6 +68,7 @@ def calc():
             if min_in_p1 > 2*((hpd_p1*60)+mpd_p1):
                 min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
                 print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % mpd_p1)
+                file.write('Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % mpd_p1)+'\n')
                 print 'Min_in_p1: '+ str(min_in_p1)
             else:
                 min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
@@ -66,11 +77,15 @@ def calc():
                     hpd_p1+=1
                     last_min=last_min-60
                 print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % (last_min))
+                file.write('Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % (last_min))+'\n')
 
     else: # periods==2
         print '---------'
         print '2 Periods'
         print '---------'
+        file.write('----------'+'\n')
+        file.write('2 Periods '+'\n')
+        file.write('----------'+'\n')
         d_p1 = 15
         d_p2 = d - d_p1
         if d < 15:
@@ -80,72 +95,69 @@ def calc():
         print ' '
         print ' --- Period 1 --- '
         print ' '
+        file.write(' ' + '\n')
+        file.write(' --- Period 1 --- ' + '\n')
+        file.write(' ' + '\n')
         min_in_p1 = min_in_period
         min_per_day_p1 = min_in_p1/d_p1
         print 'min_per_day_p1: ' + str(min_per_day_p1)
         print 'min_in_p1: ' + str(min_in_p1)
         print 'd_p1: ' + str(d_p1)
+        file.write('Minutes in Period 1: ' + str(min_in_p1)+'\n')
+        file.write('Days in Period 1: ' + str(d_p1)+'\n')
+        file.write('Minutes/Day in Period 1: '+ str(min_per_day_p1)+'\n')
+        file.write('---------'+'\n')
         hpd_p1 = int(min_per_day_p1/60)
         mpd_p1 = int(min_per_day_p1%60)
         for i in range(1, d_p1 + 1):
             if min_in_p1 > 2 * ((hpd_p1*60)+mpd_p1):
                 min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
                 print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % mpd_p1)
+                file.write('Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % mpd_p1)+'\n')
                 print 'Min_in_p1: '+ str(min_in_p1)
             else:
-                print 'ELSE'
                 min_in_p1 = min_in_p1 - (hpd_p1*60) - mpd_p1
                 last_min = mpd_p1 + min_in_p1
                 if last_min>60:
                     hpd_p1+=1
                     last_min=last_min-60
                 print 'Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % (last_min))
+                file.write('Day '+str(i) + ' - ' + str(hpd_p1) + ':' + str('%02d' % (last_min))+'\n')
 
         print ' '
         print ' -- Period 2 -- '
         print ' '
+        file.write(' ' + '\n')
+        file.write(' --- Period 2 --- ' + '\n')
+        file.write(' ' + '\n')
         min_in_p2 = min_in_period
         min_per_day_p2 = min_in_p2/d_p2
         print 'min_per_day_p2: ' + str(min_per_day_p2)
         print 'min_in_p2: ' + str(min_in_p2)
         print 'd_p2: ' + str(d_p2)
+        file.write('Minutes in Period 2: ' + str(min_in_p2)+'\n')
+        file.write('Days in Period 2: ' + str(d_p2)+'\n')
+        file.write('Minutes/Day in Period 2: '+ str(min_per_day_p2)+'\n')
+        file.write('---------'+'\n')
         hpd_p2 = int(min_per_day_p2/60)
         mpd_p2 = int(min_per_day_p2%60)
         for i in range(1, d_p2 + 1):
             if min_in_p2 > 2*((hpd_p2*60)+mpd_p2):
                 min_in_p2 = min_in_p2 - (hpd_p2*60) - mpd_p2
                 print 'Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % mpd_p2)
+                file.write('Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % mpd_p2)+'\n')
                 print 'Min_in_p2: '+ str(min_in_p2)
             else:
-                print 'ELSE'
                 min_in_p2 = min_in_p2 - (hpd_p2*60) - mpd_p2
                 last_min = mpd_p2 + min_in_p2
                 if last_min>60:
                     hpd_p2+=1
                     last_min=last_min-60
                 print 'Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % (last_min))
+                file.write('Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % (last_min))+'\n')
 
-
-
-
-
-
-
-        # p1=d/periods
-        # p2=d-p1
-        # print ' '
-        # print '--- period 1 ---'
-        # print ' '
-        # for i in range(1,p1+1):
-        #     print 'Day '+str(i)+' - '
-        # print ' '
-        #
-        # print '--- period 2 ---'
-        # print ' '
-        # for i in range(1,p2+1):
-        #     print 'Day '+str(i)+' - '
-        # print ' '
-
+    file.write('\n')
+    file.write('Saved in path: '+str(path)+'/'+str(fName)+'.txt')
 
     #On screen output
     lblspace = Label(text='_________________',bg=bckgrnd).grid(row=5, column=0, sticky=E)
@@ -187,10 +199,11 @@ entMin = Entry(app, textvariable=Min).grid(row=2, column=3, sticky=W)
 lblDays = Label(text='Days in Calc:',font=myFont,bg=bckgrnd).grid(row=3, column=0, sticky=E)
 entDays = Entry(app, textvariable=Days).grid(row=3, column=1, sticky=E)
 
-rb1 = Radiobutton(app, text="One period",font=myFont,variable=Rad, value=1, bg=bckgrnd).grid(row=4, column=0, sticky=E)
+rb1 = Radiobutton(app, text="One period",font=myFont,variable=Rad, value=1.0, bg=bckgrnd).grid(row=4, column=0, sticky=E)
 rb2 = Radiobutton(app, text="Two periods",font=myFont,variable=Rad, value=2.0, bg=bckgrnd).grid(row=4, column=1, sticky=E)
 
 myButton = Button(app, text='Calculate',font=myFont, width=10, command=calc).place(x=475, y=360)
 
 app.mainloop()
 
+file.close()
