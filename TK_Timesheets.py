@@ -42,9 +42,9 @@ def calc():
         exit()
 
     print 'ttl_min: '+str(ttl_min)
-    file.write('Total Minutes in calculation: ' + str(ttl_min)+'\n')
+    file.write('Total Minutes in calculation: ' + str(ttl_min) + '\n')
     print 'd in period: ' + str(d)
-    file.write('Total Days in calculation: ' + str(d)+'\n')
+    file.write('Total Days in calculation: ' + str(d) + '\n')
 
     if periods==1:
         print '---------'
@@ -58,6 +58,8 @@ def calc():
         min_per_day_p1 = min_in_p1/d_p1
         print 'min_in_p1: ' +  str(min_in_p1)
         file.write('Minutes in Period 1: ' + str(min_in_p1)+'\n')
+        print 'Hrs:min in period: '+ str(min_in_p1/60) + ':' + str(min_in_p1%60)
+        file.write('Hrs:min in period: '+ str(min_in_p1/60) + ':' + str(min_in_p1%60) + '\n')
         file.write('Days in Period 1: ' + str(d_p1)+'\n')
         file.write('Minutes/Day in Period 1: '+ str(min_per_day_p1)+'\n')
         file.write('---------'+'\n')
@@ -104,6 +106,8 @@ def calc():
         print 'min_in_p1: ' + str(min_in_p1)
         print 'd_p1: ' + str(d_p1)
         file.write('Minutes in Period 1: ' + str(min_in_p1)+'\n')
+        print 'Hrs:min in period: '+ str(min_in_p1/60) + ':' + str(min_in_p1%60)
+        file.write('Hrs:min in period: '+ str(min_in_p1/60) + ':' + str(min_in_p1%60) + '\n')
         file.write('Days in Period 1: ' + str(d_p1)+'\n')
         file.write('Minutes/Day in Period 1: '+ str(min_per_day_p1)+'\n')
         file.write('---------'+'\n')
@@ -136,6 +140,8 @@ def calc():
         print 'min_in_p2: ' + str(min_in_p2)
         print 'd_p2: ' + str(d_p2)
         file.write('Minutes in Period 2: ' + str(min_in_p2)+'\n')
+        print 'Hrs:min in period: '+ str(min_in_p2/60) + ':' + str(min_in_p2%60)
+        file.write('Hrs:min in period: '+ str(min_in_p2/60) + ':' + str(min_in_p2%60) + '\n')
         file.write('Days in Period 2: ' + str(d_p2)+'\n')
         file.write('Minutes/Day in Period 2: '+ str(min_per_day_p2)+'\n')
         file.write('---------'+'\n')
@@ -157,7 +163,8 @@ def calc():
                 file.write('Day '+str(i) + ' - ' + str(hpd_p2) + ':' + str('%02d' % (last_min))+'\n')
 
     file.write('\n')
-    file.write('Saved in path: '+str(path)+'/'+str(fName)+'.txt')
+    file.write('Saved in path: '+str(path)+'/'+str(fName)+'.txt' + '\n')
+    file.close()
 
     #On screen output
     lblspace = Label(text='_________________',bg=bckgrnd).grid(row=5, column=0, sticky=E)
@@ -206,4 +213,3 @@ myButton = Button(app, text='Calculate',font=myFont, width=10, command=calc).pla
 
 app.mainloop()
 
-file.close()
